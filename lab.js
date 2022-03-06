@@ -36,7 +36,7 @@ console.log(dog.name)
 
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 
@@ -45,20 +45,32 @@ console.log(dog.name)
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+const favoriteThings = {
+  back: 'Deerhoof',
+  food: 'Mexican Food',
+  person: 'me',
+  book: 'BLRW',
+  movie: 'Encanto',
+  holiday: 'Christmas'
+}
 
 /*
-  After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
+  After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car 
+  and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
+favoriteThings.car = 'Ford Bronco'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
+favoriteThings.food = 'Sushi'
+favoriteThings.book = 'Animorphs'
+
+console.log(favoriteThings.food)
+console.log(favoriteThings.book)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -75,7 +87,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const { color, make, model, year } = carDetails
+console.log(color + make + model + year)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -86,12 +99,20 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  const { title, firstName, lastName} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+
+const me2 = {
+  title: 'Mr.',
+  firstName: 'Jude',
+  lastName: 'Hall'
+}
+
+console.log(greeting(me2))
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -103,7 +124,20 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation(obj) {
+  const {utah, california, texas, arizona} = obj
+
+  return utah + california + texas + arizona
+}
+
+const populations = {
+  utah: 10,
+  california: 12,
+  texas: 11,
+  arizona: 12
+}
+
+console.log(totalPopulation(populations))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -115,7 +149,20 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj) {
+  const {carb, fat, protein} = obj
+
+  const arr = [carb, fat, protein]
+  return arr
+}
+
+const recipe = {
+  'carb': 'rice',
+  'fat': 'guacamole',
+  'protein': 'tofu',
+}
+
+console.log(ingredients(recipe))
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 
