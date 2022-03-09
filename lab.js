@@ -37,7 +37,6 @@ console.log(dog.name)
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 
-
 //////////////////////////// PROBLEM 5 ////////////////////////////
 
 /*
@@ -45,20 +44,32 @@ console.log(dog.name)
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+const favoriteThings = {
+  back: 'Deerhoof',
+  food: 'Mexican Food',
+  person: 'me',
+  book: 'BLRW',
+  movie: 'Encanto',
+  holiday: 'Christmas'
+}
 
 /*
-  After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
+  After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car 
+  and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
+favoriteThings.car = 'Ford Bronco'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
+favoriteThings.food = 'Sushi'
+favoriteThings.book = 'Animorphs'
+
+console.log(favoriteThings.food)
+console.log(favoriteThings.book)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -75,7 +86,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const { color, make, model, year } = carDetails
+console.log(color + make + model + year)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -86,12 +98,20 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  const { title, firstName, lastName} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+
+const me2 = {
+  title: 'Mr.',
+  firstName: 'Jude',
+  lastName: 'Hall'
+}
+
+console.log(greeting(me2))
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -103,7 +123,20 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation(obj) {
+  const {utah, california, texas, arizona} = obj
+
+  return utah + california + texas + arizona
+}
+
+const populations = {
+  utah: 10,
+  california: 12,
+  texas: 11,
+  arizona: 12
+}
+
+console.log(totalPopulation(populations))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -115,7 +148,20 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj) {
+  const {carb, fat, protein} = obj
+
+  const arr = [carb, fat, protein]
+  return arr
+}
+
+const recipe = {
+  'carb': 'rice',
+  'fat': 'guacamole',
+  'protein': 'tofu',
+}
+
+console.log(ingredients(recipe))
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 
@@ -136,7 +182,10 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
+
+console.log(user)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 
@@ -144,7 +193,9 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
+delete user.age
+
+console.log(user)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 
@@ -154,7 +205,17 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor(name, age, color) {
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
+
+let cat1 = new Cat('Eleanor', 15, 'White')
+
+console.log(cat1.name)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 
@@ -165,7 +226,21 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+
+  castSpell() {
+    console.log('${this.name} has cast ${this.favoriteSpell}')
+  }
+}
+
+let wizard1 = new Wizard('Jude', 28, 'Vicious Mockery')
+
+wizard1.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 
